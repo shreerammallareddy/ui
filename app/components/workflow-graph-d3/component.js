@@ -32,7 +32,7 @@ export default Component.extend({
 
         // only remove node if it is not a source node
         const endNodes = graph.nodes.filter(node => {
-          if (node.name.startsWith('sd@')) {
+          if (/^(~?)sd@/.test(node.name)) {
             // check if an edge has this node as source
             if (graph.edges.filter(edge => edge.src === node.name).length <= 0) {
               return true;
