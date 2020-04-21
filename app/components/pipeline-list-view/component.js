@@ -42,12 +42,10 @@ export default Component.extend({
     get() {
       return this.jobsDetails.map(jobDetails => {
         const latestBuild = jobDetails.builds.length ? jobDetails.builds[0] : null;
-
         const jobData = {
           jobName: jobDetails.jobName,
           build: latestBuild
         };
-
         const actionsData = {
           jobId: jobDetails.jobId,
           jobName: jobDetails.jobName,
@@ -55,7 +53,6 @@ export default Component.extend({
           startSingleBuild: this.get('startSingleBuild'),
           stopBuild: this.get('stopBuild')
         };
-
         let startDateTime;
         let endDateTime;
         let startTime;
